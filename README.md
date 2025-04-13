@@ -31,22 +31,21 @@ npm i axios discord.js-selfbot-v13
 ## 🛠️ Setup
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/z7rab/self-pluto.git
-  ```
+```bash
+git clone https://github.com/z7rab/self-pluto.git
+```
 
-```markdown
 2. Navigate to the folder:
-   ```bash
-   cd self-pluto
-   ```
+```bash
+cd self-pluto
+```
 
 3. Configure your `settings.json` to your liking
 
 4. Run the bot:
-   ```bash
-   node index.js
-   ```
+```bash
+node index.js
+```
 
 ---
 
