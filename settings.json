@@ -1,0 +1,37 @@
+{
+    "token": "USER-TOKEN",
+    "commandPrefix": "PREFIX",
+    "authorizedUsers": [
+        "USERID1"
+    ],
+    "webhookUrl": "ADD-YOUR-WEBHOOK-URL",
+    "forwardChannelId": "ADD-YOUR-CHANNEL-ID-OF-THE-WEBHOOK",
+    "debugLevel": "verbose",
+    "logToFile": false,
+    "logFilePath": "./logs/selfbot.log",
+    "embedDefaults": {
+        "color": "0x00FF00",
+        "footerText": "self-pluto 🪐 Alert",
+        "title": "self-pluto 🪐",
+        "description": "Broadcasting from the edge of the solar system! 🚀",
+        "field1": "Signal",
+        "field1Text": "Strong",
+        "field2": "Origin",
+        "field2Text": "Pluto Base"
+    },
+    "helpCommandEmbed": {
+        "color": "0x00FF00",
+        "footerText": "self-pluto 🪐",
+        "title": "self-pluto 🪐",
+        "description": "**💌 Welcome to self-pluto! 💌**\n\n> A lightweight, powerful selfbot client for Discord.\n\n### 📜 Commands:\n- `;help` — Displays this help menu.\n- `;sendembed` — Sends a test embed for debugging. 🤯\n- `;cat` — Sends a random cat image. 🐱\n- `;dog` — Sends a random dog image. 🐶\n- `;adduser [DISCORD ID]` — Authorize a user to control this client. ✅\n- `;deluser [DISCORD ID]` — Remove a user from authorized list. ❌\n\n### 🌐 Links:\n- **GitHub:** [self-pluto.xyz](https://github.com/z7rab/self-pluto)\n- **Discord:** [dsc.gg/self-pluto](https://discord.gg/)",
+        "github": "[self-pluto.xyz](https://github.com/z7rab/self-pluto)",
+        "discord": "[Contact 7rab](https://discord.com/users/1042440993028460594)",
+        "credits": "**👑 Credits:**\n- **7rab#0** — Main Developer *(605995776711327769)*\n- **snarkydev#0** — Inspiration *(605995776711327769)*\n- **ChatGPT** — Commands: `ADDUSER`, `DELUSER` [chatgpt.com](https://chatgpt.com)\n- **Grok** — Command assistance [grok.com](https://grok.com)"
+    },
+    "rateLimitDelay": 50,
+    "developerOptions": {
+        "enableErrorStackTrace": true,
+        "maxMessageCache": 100,
+        "apiRequestTimeout": 5000
+    }
+}
