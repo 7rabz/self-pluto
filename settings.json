@@ -24,7 +24,7 @@
   // Default embed style used by commands like ;sendembed
   "embedDefaults": {
     "color": "0x00FF00",
-    "footerText": "self-pluto 🪐 Alert",
+    "footerText": "self-pluto 🪐 - made by 7rab :3",
     "title": "self-pluto 🪐",
     "description": "Broadcasting from the edge of the solar system! 🚀",
     "field1": "Signal",
@@ -36,7 +36,7 @@
   // The embed used for the ;help command
   "helpCommandEmbed": {
     "color": "0x00FF00",
-    "footerText": "self-pluto 🪐",
+    "footerText": "self-pluto 🪐 - made by 7rab :3",
     "title": "self-pluto 🪐",
     "description": "**💌 Welcome to self-pluto! 💌**\n\n> A lightweight, powerful selfbot client for Discord.\n\n### 📜 Commands:\n- `;help` — Displays this help menu.\n- `;sendembed` — Sends a test embed for debugging. 🤯\n- `;cat` — Sends a random cat image. 🐱\n- `;dog` — Sends a random dog image. 🐶\n- `;adduser [DISCORD ID]` — Authorize a user to control this client. ✅\n- `;deluser [DISCORD ID]` — Remove a user from authorized list. ❌\n\n### 🌐 Links:\n- **GitHub:** [self-pluto.xyz](https://github.com/z7rab/self-pluto)\n- **Discord:** [dsc.gg/self-pluto](https://discord.gg/)",
     "github": "[self-pluto.xyz](https://github.com/7rabz/self-pluto)",
