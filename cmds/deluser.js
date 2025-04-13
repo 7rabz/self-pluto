@@ -7,6 +7,9 @@ module.exports = {
     description: 'Removes a Discord user ID from the authorizedUsers list and sends confirmation embed.',
     async execute(client, message, args, settings) {
         console.log(`[DEBUG] Starting deluser command in channel ${message.channel.id} at ${new Date().toISOString()}`);
+        if (!settings.trustedUsers.includes(message.author.id)) {
+            return;
+        }
 
         try {
             await message.delete();
