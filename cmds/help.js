@@ -3,26 +3,31 @@ const axios = require('axios');
 module.exports = {
     name: 'help',
     description: 'Sends an embed via webhook and forwards it to the user.',
-    async execute(client, message, args, settings) {
+    async execute(client, message, args, settings, startTime) {
         console.log(`[DEBUG] Starting sendembed command in channel ${message.channel.id} at ${new Date().toISOString()}`);
 
         // Delete the command message
-        try {
-            await message.delete();
-            console.log(`[DEBUG] Deleted command message ${message.id} at ${new Date().toISOString()}`);
-        } catch (error) {
-            console.error(`[ERROR] Failed to delete command message: ${error.message} at ${new Date().toISOString()}`);
-        }
+        const msToTime = (duration) => {
+            let seconds = Math.floor((duration / 1000) % 60);
+            let minutes = Math.floor((duration / (1000 * 60)) % 60);
+            let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+            let days = Math.floor(duration / (1000 * 60 * 60 * 24));
+        
+            return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        };
+
+        const uptime = msToTime(Date.now() - startTime);
 
         // Create embed
         const embed = {
             title: settings.helpCommandEmbed.title,
-            description: settings.helpCommandEmbed.description,
+            description: `**💌 Welcome to self-pluto! 💌**\n\n> A lightweight and powerful selfbot client for Discord.\n### 📜 Commands:\n- \`${settings.commandPrefix}help\` — Displays this help menu.\n- \`${settings.commandPrefix}sendembed\` — Sends a test embed for debugging. 🤯\n- \`${settings.commandPrefix}cat\` — Sends a random cat image. 🐱\n- \`${settings.commandPrefix}dog\` — Sends a random dog image. 🐶\n- \`${settings.commandPrefix}percentage [type] [ping]\` — Generates a random percentage and labels the user with it!\n- \`${settings.commandPrefix}adduser [mention/reply]\` — Authorize a user to control this client. ✅\n- \`${settings.commandPrefix}deluser [mention/reply]\` — Remove a user from authorized list. ❌\n- \`${settings.commandPrefix}cuddle [mention/reply]\` — Sends an anime cuddle image to a user. 🤗\n- \`${settings.commandPrefix}kiss [mention/reply]\` — Sends an anime kiss image to a user. 😘\n- \`${settings.commandPrefix}flipoff [mention/reply]\` — Sends an anime flip-off image to a user. 🖕\n- \`${settings.commandPrefix}hug [mention/reply]\` — Sends an anime hug image to a user. 🫂\n\n### 🌐 Links:\n- **GitHub:** [self-pluto.xyz](https://github.com/z7rab/self-pluto)\n- **Discord:** [dsc.gg/self-pluto](https://discord.gg/)`,
             color: parseInt(settings.helpCommandEmbed.color),
             fields: [
                 { name: "Our Github", value: settings.helpCommandEmbed.github, inline: true },
                 { name: "My Discord", value: settings.helpCommandEmbed.discord, inline: true },
                 { name: "Credits", value: settings.helpCommandEmbed.credits, inline: true },
+                { name: "Information", value: `· Uptime: ${uptime}`, inline: false },
             ],
             footer: { text: settings.helpCommandEmbed.footerText },
             timestamp: new Date()
