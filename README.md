@@ -54,16 +54,19 @@ node index.js
 | Command                     | Description                                            |
 |----------------------------|--------------------------------------------------------|
 | `;help`                    | Displays the help embed                                |
-| `;sendembed`               | Sends a test embed using forward logic                 |
-| `;cat`                     | Sends a random cat image 🐱                           |
-| `;dog`                     | Sends a random dog image 🐶                           |
-| `;percentage [type] [ping]`| Generates a random percentage and labels the user      |
-| `;adduser [mention/reply]` | Adds a user to the authorized user list ✅             |
-| `;deluser [mention/reply]` | Removes a user from the authorized list ❌             |
-| `;cuddle [mention/reply]`  | Sends an anime cuddle image to a user 🤗              |
-| `;kiss [mention/reply]`    | Sends an anime kiss image to a user 😘                |
-| `;flipoff [mention/reply]` | Sends an anime flip-off image to a user 🖕            |
-| `;hug [mention/reply]`     | Sends an anime hug image to a user 🫂                |
+| `;sendembed`               | debugging message                 |
+| `;cat`                     | mrraw!! :3                           |
+| `;dog`                     | woof woof :3                           |
+| `;percentage [type] [ping]`| generates a random percentage      |
+| `;addtrusteduser [mention/reply]` | auths the user as trusted             |
+| `;deltrusteduser [mention/reply]` | de-auths the user from trusted             |
+| `;adduser [mention/reply]` | auths the user             |
+| `;deluser [mention/reply]` | de-auths the user             |
+| `;cuddle [mention/reply]`  | cuddles the user :P              |
+| `;kiss [mention/reply]`    | kisses the user ^w^                |
+| `;flipoff [mention/reply]` | FWRICK YOU!! >:(            |
+| `;hug [mention/reply]`     | hugs the user :3                |
+| `;poll "Question" "Option1,Option2"`     | must be in quotes :3                |
 
 ---
 
