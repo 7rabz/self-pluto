@@ -6,13 +6,6 @@ module.exports = {
     async execute(client, message, args, settings) {
         console.log(`[DEBUG] Starting cat command in channel ${message.channel.id} at ${new Date().toISOString()}`);
 
-        try {
-            await message.delete();
-            console.log(`[DEBUG] Deleted command message ${message.id} at ${new Date().toISOString()}`);
-        } catch (error) {
-            console.error(`[ERROR] Failed to delete command message: ${error.message} at ${new Date().toISOString()}`);
-        }
-
         let catImageUrl;
         try {
             const response = await axios.get('https://api.thecatapi.com/v1/images/search');
@@ -23,8 +16,8 @@ module.exports = {
         }
 
         const embed = {
-            title: "Random Cat 🐱",
-            description: "Here's a cute cat for you!",
+            title: "mraww!! cute car :3 <a:meow:1350857939652706334>",
+            description: "so cute!! :D",
             color: parseInt(settings.embedDefaults.color),
             image: { url: catImageUrl },
             footer: { text: settings.embedDefaults.footerText },
