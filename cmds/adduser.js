@@ -36,7 +36,7 @@ module.exports = {
             return;
         }
 
-        const filePath = toString(settings.SettingsFilePath);
+        const filePath = path.join(toString(settings.SettingsFilePath));
 
         let fileData;
         try {
