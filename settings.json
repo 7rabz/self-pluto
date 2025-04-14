@@ -41,7 +41,7 @@
     "description": "**💌 Welcome to self-pluto! 💌**\n\n> A lightweight, powerful selfbot client for Discord.\n\n### 📜 Commands:\n- `;help` — Displays this help menu.\n- `;sendembed` — Sends a test embed for debugging. 🤯\n- `;cat` — Sends a random cat image. 🐱\n- `;dog` — Sends a random dog image. 🐶\n- `;adduser [DISCORD ID]` — Authorize a user to control this client. ✅\n- `;deluser [DISCORD ID]` — Remove a user from authorized list. ❌\n\n### 🌐 Links:\n- **GitHub:** [self-pluto.xyz](https://github.com/z7rab/self-pluto)\n- **Discord:** [dsc.gg/self-pluto](https://discord.gg/)",
     "github": "[self-pluto.xyz](https://github.com/7rabz/self-pluto)",
     "discord": "[Contact 7rab](https://discord.com/users/1042440993028460594)",
-    "credits": "**👑 Credits:**\n- **7rab#0** — Main Developer *(605995776711327769)*\n- **snarkydev#0** — Inspiration *(957771692300709918)*\n- **ChatGPT** — Commands: `ADDUSER`, `DELUSER` [chatgpt.com](https://chatgpt.com)\n- **Grok** — Command assistance [grok.com](https://grok.com)"
+    "credits": "**👑 Credits:**\n- **7rab#0** — Main Developer *(1323735117226836038)*\n- **snarkydev#0** — Inspiration *(957771692300709918)*\n- **ChatGPT** — Commands: `ADDUSER`, `DELUSER` [chatgpt.com](https://chatgpt.com)\n- **Grok** — Command assistance [grok.com](https://grok.com)"
   },
 
   // Anti-spam / throttle control
