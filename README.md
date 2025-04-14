@@ -69,7 +69,7 @@ node index.js
 
 ## 👑 Credits
 
-- **7rab#0** — Main Developer *(605995776711327769)*  
+- **7rab#0** — Main Developer *(1323735117226836038)*  
 - **snarkydev#0** — Inspiration *(957771692300709918)*  
 - **ChatGPT** — Helped with command logic (`ADDUSER`, `DELUSER`) → [chatgpt.com](https://chatgpt.com)  
 - **Grok** — Assisted with code ideas and logic → [grok.com](https://grok.com)
