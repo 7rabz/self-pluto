@@ -18,8 +18,9 @@
 
   // Logging settings
   "debugLevel": "verbose",
-  "logToFile": false,
-  "logFilePath": "./logs/selfbot.log",
+  "logToFile": false, // NON FUNCTIONAL - WIP
+  "logFilePath": "./logs/selfbot.log", // NON FUNCTIONAL - WIP
+  "SettingsFilePath": "Put-Your-Full-Settings.JSON-File-Path-Here",
 
   // Default embed style used by commands like ;sendembed
   "embedDefaults": {
