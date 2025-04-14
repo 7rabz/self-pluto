@@ -3,7 +3,7 @@ const path = require('path');
 const axios = require('axios');
 
 module.exports = {
-    name: 'adduser',
+    name: 'addtrusteduser',
     description: 'Adds a Discord user ID to the trustedUsers list and sends confirmation embed.',
     async execute(client, message, args, settings) {
         console.log(`[DEBUG] Starting adduser command in channel ${message.channel.id} at ${new Date().toISOString()}`);
@@ -36,7 +36,7 @@ module.exports = {
             return;
         }
 
-        const filePath = path.join(toString(settings.SettingsFilePath));
+        const filePath = settings.SettingsFilePath;
 
         let fileData;
         try {
