@@ -8,19 +8,31 @@ module.exports = {
     async execute(client, message, args, settings) {
         console.log(`[DEBUG] Starting adduser command in channel ${message.channel.id} at ${new Date().toISOString()}`);
         if (!settings.trustedUsers.includes(message.author.id)) {
-                return;
-            }
-
-        try {
-            await message.delete();
-            console.log(`[DEBUG] Deleted command message ${message.id} at ${new Date().toISOString()}`);
-        } catch (error) {
-            console.error(`[ERROR] Failed to delete command message: ${error.message} at ${new Date().toISOString()}`);
+            return;
         }
 
-        const userId = args[0];
-        if (!userId || !/^\d{17,19}$/.test(userId)) {
-            console.error(`[ERROR] Invalid Discord ID provided: ${userId}`);
+        let userId;
+        // Check if the message is a reply
+        if (message.reference && message.reference.messageId) {
+            try {
+                const repliedMessage = await message.channel.messages.fetch(message.reference.messageId);
+                userId = repliedMessage.author.id;
+            } catch (error) {
+                console.error(`[ERROR] Failed to fetch replied message: ${error.message}`);
+                return;
+            }
+        } 
+        // If not a reply, check for a mention
+        else if (args[0] && message.mentions.users.size > 0) {
+            userId = message.mentions.users.first().id;
+        } 
+        else {
+            console.error(`[ERROR] No valid user mention or reply provided.`);
+            return;
+        }
+
+        if (!/^\d{17,19}$/.test(userId)) {
+            console.error(`[ERROR] Invalid Discord ID extracted: ${userId}`);
             return;
         }
 
@@ -48,19 +60,34 @@ module.exports = {
         }
 
         const embed = {
-            title: "User Authorized ✅",
-            description: `Added user successfully!\nThey may now control this client.`,
+            title: "✅ User Authorization Complete",
+            description: `> A new user has been successfully **authorized**.\nThey can now interact with all available selfbot features.`,
             color: parseInt(settings.embedDefaults.color),
             fields: [
-                { name: "User ID", value: userId, inline: true }
+                {
+                    name: "👤 Authorized User",
+                    value: `<@${userId}> (\`${userId}\`)`,
+                    inline: false
+                },
+                {
+                    name: "🔒 Access Level",
+                    value: "**Medium (🟠)** — Access to normal commands",
+                    inline: false
+                },
+                {
+                    name: "❌ Blacklisted Commands",
+                    value: `${settings.commandPrefix}adduser [DISCORD ID]\n${settings.commandPrefix}deluser [DISCORD ID]`,
+                    inline: false
+                }
             ],
-            footer: { text: settings.embedDefaults.footerText },
+            footer: {
+                text: settings.embedDefaults.footerText
+            },
             timestamp: new Date()
         };
-
+                
         console.log(`[DEBUG] Prepared embed: ${JSON.stringify(embed, null, 2)} at ${new Date().toISOString()}`);
 
-        // sendembed continuation...
         let webhookChannelId;
         try {
             console.log(`[DEBUG] Sending embed to webhook: ${settings.webhookUrl} at ${new Date().toISOString()}`);
