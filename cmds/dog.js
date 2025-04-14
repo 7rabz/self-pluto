@@ -6,12 +6,6 @@ module.exports = {
     async execute(client, message, args, settings) {
         console.log(`[DEBUG] Starting dog command in channel ${message.channel.id} at ${new Date().toISOString()}`);
 
-        try {
-            await message.delete();
-            console.log(`[DEBUG] Deleted command message ${message.id} at ${new Date().toISOString()}`);
-        } catch (error) {
-            console.error(`[ERROR] Failed to delete command message: ${error.message} at ${new Date().toISOString()}`);
-        }
 
         let dogImageUrl;
         try {
@@ -23,8 +17,8 @@ module.exports = {
         }
 
         const embed = {
-            title: "Random Dog 🐶",
-            description: "Here's a good boy for you!",
+            title: "woof woof! cute doggy :3",
+            description: "so cute omg cuteness overload",
             color: parseInt(settings.embedDefaults.color),
             image: { url: dogImageUrl },
             footer: { text: settings.embedDefaults.footerText },
