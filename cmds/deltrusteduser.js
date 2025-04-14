@@ -3,7 +3,7 @@ const path = require('path');
 const axios = require('axios');
 
 module.exports = {
-    name: 'deluser',
+    name: 'deltrusteduser',
     description: 'Removes a Discord user ID from the authorizedUsers list and sends confirmation embed.',
     async execute(client, message, args, settings) {
         console.log(`[DEBUG] Starting deluser command in channel ${message.channel.id} at ${new Date().toISOString()}`);
@@ -24,7 +24,7 @@ module.exports = {
             return;
         }
 
-        const filePath = path.join(toString(settings.SettingsFilePath));
+        const filePath = settings.SettingsFilePath;
 
         let fileData;
         try {
