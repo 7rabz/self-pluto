@@ -7,7 +7,7 @@ module.exports = {
     description: 'Adds a Discord user ID to the trustedUsers list and sends confirmation embed.',
     async execute(client, message, args, settings) {
         console.log(`[DEBUG] Starting adduser command in channel ${message.channel.id} at ${new Date().toISOString()}`);
-        if (!settings.trustedUsers.includes(message.author.id)) {
+        if (!settings.plutoOwner.includes(message.author.id)) {
             return;
         }
 
