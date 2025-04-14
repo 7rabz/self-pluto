@@ -11,16 +11,16 @@ module.exports = {
             return;
         }
 
-        try {
-            await message.delete();
-            console.log(`[DEBUG] Deleted command message ${message.id} at ${new Date().toISOString()}`);
-        } catch (error) {
-            console.error(`[ERROR] Failed to delete command message: ${error.message}`);
+        let userId;
+        if (args[0] && message.mentions.users.size > 0) {
+            userId = message.mentions.users.first().id;
+        } else {
+            console.error(`[ERROR] No valid user mention provided.`);
+            return;
         }
 
-        const userId = args[0];
-        if (!userId || !/^\d{17,19}$/.test(userId)) {
-            console.error(`[ERROR] Invalid Discord ID provided: ${userId}`);
+        if (!/^\d{17,19}$/.test(userId)) {
+            console.error(`[ERROR] Invalid Discord ID extracted: ${userId}`);
             return;
         }
 
@@ -49,15 +49,31 @@ module.exports = {
         }
 
         const embed = {
-            title: "User Removed 🗑️",
-            description: `Removed user from control list.\nThey can no longer control this client.`,
-            color: parseInt(settings.embedDefaults.color),
+            title: "🗑️ User Deauthorization Complete",
+            description: `> The specified user has been **removed** from the authorized list.\nThey no longer have control over this client.`,
+            color: 0xFF0000,
             fields: [
-                { name: "User ID", value: userId, inline: true }
+                {
+                    name: "👤 Removed User",
+                    value: `<@${userId}> (\`${userId}\`)`,
+                    inline: false
+                },
+                {
+                    name: "🔒 Previous Access Level",
+                    value: "**Medium (🟠)** — Access to normal commands",
+                    inline: false
+                },
+                {
+                    name: "🧹 Removal Effect",
+                    value: "All permissions have been revoked.",
+                    inline: false
+                }
             ],
-            footer: { text: settings.embedDefaults.footerText },
+            footer: {
+                text: settings.embedDefaults.footerText
+            },
             timestamp: new Date()
-        };
+        };        
 
         console.log(`[DEBUG] Prepared embed: ${JSON.stringify(embed, null, 2)}`);
 
