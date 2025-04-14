@@ -1,12 +1,13 @@
 const { Client } = require('discord.js-selfbot-v13');
 const fs = require('fs').promises; // Fixed: lowercase 'promises'
 const path = require('path');
+const startTime = Date.now(); // Store the bot's start time
 
 // Load settings
 let settings;
 try {
     settings = require('./settings.json');
-    console.log(`[DEBUG] Loaded settings: REDACTED at ${new Date().toISOString()}`);
+    console.log(`[DEBUG] Loaded settings: ${JSON.stringify(settings, null, 2)} at ${new Date().toISOString()}`);
 } catch (error) {
     console.error(`[ERROR] Failed to load settings.json: ${error.message} at ${new Date().toISOString()}`);
     process.exit(1);
@@ -48,8 +49,14 @@ client.on('ready', async () => {
 });
 
 client.on('messageCreate', async (message) => {
-    // Ignore messages not from authorized users or not in a guild
-    if (!settings.authorizedUsers.includes(message.author.id)) {
+      try {
+        settings = require('./settings.json');
+    } catch (error) {
+        console.error(`[ERROR] Failed to load settings.json: ${error.message} at ${new Date().toISOString()}`);
+        process.exit(1);
+    }
+
+    if (!settings.authorizedUsers.includes(message.author.id) || !settings.trustedUsers.includes(message.author.id) || !settings.plutoOwner.includes(message.author.id)) {
         return;
     }
     if (!message.content.startsWith(settings.commandPrefix)) {
@@ -70,7 +77,7 @@ client.on('messageCreate', async (message) => {
     }
 
     try {
-        await command.execute(client, message, args, settings);
+        await command.execute(client, message, args, settings, startTime);
         console.log(`[DEBUG] Executed command ${commandName} successfully at ${new Date().toISOString()}`);
     } catch (error) {
         console.error(`[ERROR] Failed to execute command ${commandName}: ${error.message} at ${new Date().toISOString()}`);
