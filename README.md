@@ -73,7 +73,7 @@ node index.js
 
 ## 🌐 Links
 
-- **GitHub:** [self-pluto.xyz](https://github.com/z7rab/self-pluto)
+- **GitHub:** [self-pluto.xyz](https://github.com/7rabz/self-pluto)
 - **Discord:** [dsc.gg/self-pluto](https://discord.com/users/1042440993028460594)
 
 ---
