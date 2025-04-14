@@ -24,7 +24,7 @@ module.exports = {
             return;
         }
 
-        const filePath = path.join("REPLACE-THIS-WITH-YOUR-FILE-PATH"); // REPLACE THIS WITH YOUR OWN FILE PATH, I
+        const filePath = toString(settings.SettingsFilePath);
 
         let fileData;
         try {
