@@ -2,6 +2,14 @@
   "token": "YOUR-DISCORD-USER-TOKEN",
   "commandPrefix": ";",
 
+  // WARNING: Users listed here will have FULL access to the selfbot.
+  // Granting this to others can result in remote code execution (RCE).
+  // Only add your own Discord ID unless you fully trust someone.
+  
+  "plutoOwner": [
+    "YOUR-OWN-DISCORD-ID"
+  ],
+
   // These users can run sensitive commands like ;adduser and ;deluser
   "trustedUsers": [
     "YOUR-TRUSTED-DISCORD-ID"
