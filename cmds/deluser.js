@@ -24,7 +24,7 @@ module.exports = {
             return;
         }
 
-        const filePath = path.join("D:/Files/Desktop/nightmareenv/nodejs/selfbot/settings.json");
+        const filePath = toString(settings.SettingsFilePath);
 
         let fileData;
         try {
