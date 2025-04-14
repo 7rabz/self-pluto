@@ -57,8 +57,13 @@ node index.js
 | `;sendembed`               | Sends a test embed using forward logic                 |
 | `;cat`                     | Sends a random cat image 🐱                           |
 | `;dog`                     | Sends a random dog image 🐶                           |
-| `;adduser [DISCORD ID]`    | Adds a Discord ID to the authorized user list ✅        |
-| `;deluser [DISCORD ID]`    | Removes a Discord ID from the authorized list ❌        |
+| `;percentage [type] [ping]`| Generates a random percentage and labels the user      |
+| `;adduser [mention/reply]` | Adds a user to the authorized user list ✅             |
+| `;deluser [mention/reply]` | Removes a user from the authorized list ❌             |
+| `;cuddle [mention/reply]`  | Sends an anime cuddle image to a user 🤗              |
+| `;kiss [mention/reply]`    | Sends an anime kiss image to a user 😘                |
+| `;flipoff [mention/reply]` | Sends an anime flip-off image to a user 🖕            |
+| `;hug [mention/reply]`     | Sends an anime hug image to a user 🫂                |
 
 ---
 
