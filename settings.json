@@ -25,7 +25,7 @@
   "forwardChannelId": "CHANNEL-ID-TO-FORWARD-MESSAGES",
 
   // Logging settings
-  "debugLevel": "verbose",
+  "debugLevel": "verbose", // NON FUNCTIONAL - WIP
   "logToFile": false, // NON FUNCTIONAL - WIP
   "logFilePath": "./logs/selfbot.log", // NON FUNCTIONAL - WIP
   "SettingsFilePath": "Put-Your-Full-Settings.JSON-File-Path-Here",
