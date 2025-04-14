@@ -1,3 +1,11 @@
+/*
+
+    EXTREME - WORK IN PROGRESS | YOU MAY SUGGEST IDEAS TO ME FROM MY DISCORD IN README
+
+    CHECK BACK IN LATER.
+
+*/
+
 const axios = require('axios');
 
 module.exports = {
