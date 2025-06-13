@@ -4,7 +4,7 @@ module.exports = {
     name: 'percentage',
     description: 'Returns a random funny percentage value in an embed.',
     async execute(client, message, args, settings) {
-        console.log(`[DEBUG] Starting funnyembed command in channel ${message.channel.id} at ${new Date().toISOString()}`);
+        console.log(`[DEBUG] Starting percentage command in channel ${message.channel.id} at ${new Date().toISOString()}`);
 
         // Delete the command message
         // Randomize percentage
@@ -31,7 +31,7 @@ module.exports = {
 
         // Create embed
         const embed = {
-            title: 'percentage creator 3000 <:kitty:1350858005515599932>',
+            title: `${args[0]}-ness rating :3`,
             description: descriptionText,
             color: 0x0099ff,
             footer: { text: settings.embedDefaults.footerText },
